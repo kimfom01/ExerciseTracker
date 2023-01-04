@@ -1,7 +1,7 @@
 using ExerciseTracker.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace ExerciseTracker.DataContext;
+namespace ExerciseTracker.Data.DataContext;
 
 public class ExerciseContext : DbContext
 {

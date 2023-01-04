@@ -1,4 +1,4 @@
-using ExerciseTracker.DataContext;
+using ExerciseTracker.Data.DataContext;
 
 namespace ExerciseTracker.Data.Repositories;
 
