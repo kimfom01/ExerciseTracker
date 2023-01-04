@@ -1,6 +1,5 @@
 namespace ExerciseTracker.Data.Repositories;
 
-public interface IExerciseRepository
+public interface IExerciseRepository : IRepository
 {
-    
 }
