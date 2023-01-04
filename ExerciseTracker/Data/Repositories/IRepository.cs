@@ -1,8 +1,8 @@
 using ExerciseTracker.Models;
 
-namespace ExerciseTracker.Data;
+namespace ExerciseTracker.Data.Repositories;
 
-public interface IDataAccess
+public interface IRepository
 {
     public IEnumerable<Exercise> GetExercises();
     public Exercise GetExerciseById(int id);

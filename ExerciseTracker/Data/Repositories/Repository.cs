@@ -1,13 +1,13 @@
 using ExerciseTracker.DataContext;
 using ExerciseTracker.Models;
 
-namespace ExerciseTracker.Data;
+namespace ExerciseTracker.Data.Repositories;
 
-public class EfCoreDataAccess : IDataAccess
+public class Repository : IRepository
 {
     private readonly ExerciseContext _exerciseContext;
 
-    public EfCoreDataAccess(ExerciseContext exerciseContext)
+    public Repository(ExerciseContext exerciseContext)
     {
         _exerciseContext = exerciseContext;
     }
