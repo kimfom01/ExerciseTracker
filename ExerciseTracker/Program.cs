@@ -1,3 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using ExerciseTracker;
+using ExerciseTracker.Data.DataContext;
+using ExerciseTracker.Data.Repositories;
+using Microsoft.Extensions.DependencyInjection;
 
-Console.WriteLine("Hello, World!");
+var services = new ServiceCollection();
+
+services.AddDbContext<ExerciseContext>();
+services.AddTransient<IExerciseRepository, ExerciseRepository>();
+
+var serviceProvider = services.BuildServiceProvider();
+var startup = serviceProvider.GetService<Startup>();
+
+startup!.Run();
