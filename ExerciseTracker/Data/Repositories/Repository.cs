@@ -3,11 +3,11 @@ using ExerciseTracker.Models;
 
 namespace ExerciseTracker.Data.Repositories;
 
-public class Repository : IRepository
+public abstract class Repository : IRepository
 {
     private readonly ExerciseContext _exerciseContext;
 
-    public Repository(ExerciseContext exerciseContext)
+    protected Repository(ExerciseContext exerciseContext)
     {
         _exerciseContext = exerciseContext;
     }
