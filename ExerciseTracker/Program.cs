@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 var services = new ServiceCollection();
 
+services.AddTransient<Startup>();
 services.AddDbContext<ExerciseContext>();
 services.AddTransient<IExerciseRepository, ExerciseRepository>();
 
