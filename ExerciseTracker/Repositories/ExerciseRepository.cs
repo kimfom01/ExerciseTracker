@@ -1,6 +1,6 @@
-using ExerciseTracker.Data.DataContext;
+using ExerciseTracker.Data;
 
-namespace ExerciseTracker.Data.Repositories;
+namespace ExerciseTracker.Repositories;
 
 public class ExerciseRepository : Repository, IExerciseRepository
 {
