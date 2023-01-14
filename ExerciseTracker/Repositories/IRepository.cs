@@ -1,6 +1,6 @@
 using ExerciseTracker.Models;
 
-namespace ExerciseTracker.Data.Repositories;
+namespace ExerciseTracker.Repositories;
 
 public interface IRepository
 {
