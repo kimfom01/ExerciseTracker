@@ -1,4 +1,4 @@
-namespace ExerciseTracker.Data.Repositories;
+namespace ExerciseTracker.Repositories;
 
 public interface IExerciseRepository : IRepository
 {
