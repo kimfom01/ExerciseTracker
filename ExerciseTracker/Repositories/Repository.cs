@@ -30,8 +30,9 @@ public abstract class Repository : IRepository
     public virtual void UpdateExercise(int id, Exercise exercise)
     {
         var exerciseToBeUpdated = GetExerciseById(id);
-        exerciseToBeUpdated.StartDate = exercise.StartDate;
+
         exerciseToBeUpdated.EndDate = exercise.EndDate;
+        exerciseToBeUpdated.Duration = exercise.Duration;
         exerciseToBeUpdated.Comments = exercise.Comments;
     }
 
