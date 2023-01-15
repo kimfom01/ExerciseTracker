@@ -1,9 +1,17 @@
+using ExerciseTracker.Controller;
+
 namespace ExerciseTracker;
 
 public class Startup
 {
+    private readonly IExerciseController _exerciseController;
+
+    public Startup(IExerciseController exerciseController)
+    {
+        _exerciseController = exerciseController;
+    }
     public void Run()
     {
-        Console.WriteLine("Hello World!");
+        _exerciseController.Run();
     }
 }
