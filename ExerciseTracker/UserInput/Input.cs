@@ -22,7 +22,7 @@ public class Input : IInput
             choice = Console.ReadLine();
         }
 
-        return choice;
+        return choice!;
     }
 
     public int GetId()
@@ -51,6 +51,6 @@ public class Input : IInput
             comments = Console.ReadLine();
         }
 
-        return comments;
+        return comments!;
     }
 }
