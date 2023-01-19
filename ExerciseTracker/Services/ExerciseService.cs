@@ -15,16 +15,40 @@ public class ExerciseService : IExerciseService
         _input = input;
     }
 
-    public List<Exercise> GetAllExercises()
+    public void GetAllExercises()
     {
-        return _exerciseRepository.GetExercises().ToList();
+        var exercises = _exerciseRepository.GetExercises().ToList();
+        Console.Clear();
+        foreach (var exercise in exercises)
+        {
+            Console.WriteLine(exercise.Id);
+            Console.WriteLine(exercise.StartDate);
+            Console.WriteLine(exercise.EndDate);
+            Console.WriteLine(exercise.Duration);
+            Console.WriteLine(exercise.Comments);
+            Console.WriteLine();
+        }
+
+        Console.Write("Press Enter to continue");
+        Console.ReadLine();
     }
 
-    public Exercise GetExerciseById()
+    public void GetExerciseById()
     {
         var id = _input.GetId();
 
-        return _exerciseRepository.GetExerciseById(id);
+        var exercise = _exerciseRepository.GetExerciseById(id);
+        Console.Clear();
+
+        Console.WriteLine(exercise.Id);
+        Console.WriteLine(exercise.StartDate);
+        Console.WriteLine(exercise.EndDate);
+        Console.WriteLine(exercise.Duration);
+        Console.WriteLine(exercise.Comments);
+        Console.WriteLine();
+
+        Console.Write("Press Enter to continue");
+        Console.ReadLine();
     }
 
     public void RecordNewExercise()
@@ -34,6 +58,12 @@ public class ExerciseService : IExerciseService
 
         _exerciseRepository.AddExercise(exercise);
         _exerciseRepository.SaveChanges();
+        Console.Clear();
+        
+        Console.WriteLine("New exercise recorded");
+        
+        Console.Write("Press Enter to continue");
+        Console.ReadLine();
     }
 
     public void UpdateExistingExercise()
@@ -46,6 +76,12 @@ public class ExerciseService : IExerciseService
 
         _exerciseRepository.UpdateExercise(id, exercise);
         _exerciseRepository.SaveChanges();
+        Console.Clear();
+        
+        Console.WriteLine("Exercise updated");
+        
+        Console.Write("Press Enter to continue");
+        Console.ReadLine();
     }
 
     public void DeleteExercise()
@@ -53,5 +89,11 @@ public class ExerciseService : IExerciseService
         var id = _input.GetId();
         _exerciseRepository.DeleteExercise(id);
         _exerciseRepository.SaveChanges();
+        Console.Clear();
+        
+        Console.WriteLine("Exercise deleted");
+        
+        Console.Write("Press Enter to continue");
+        Console.ReadLine();
     }
 }
