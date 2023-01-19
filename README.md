@@ -12,10 +12,9 @@ Console based CRUD application to record exercise data. Developed using C# and S
 - [x] You need to use dependency injection to access the repository from the controller.
     
 ## Things I learnt
-* Parsing DateTime
-* Seperation of concerns
-* Using an external library
-* Getting connection string from an external source (config file)
+* Entity Framework
+* SOLID
+* Dependency Injection
 
 ## Resources
 * [ConsoleTableExt](https://github.com/minhhungit/ConsoleTableExt)
