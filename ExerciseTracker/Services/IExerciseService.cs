@@ -6,7 +6,7 @@ public interface IExerciseService
 {
     public void RecordNewExercise();
     public void UpdateExistingExercise();
-    public List<Exercise> GetAllExercises();
-    public Exercise GetExerciseById();
+    public void GetAllExercises();
+    public void GetExerciseById();
     public void DeleteExercise();
 }
