@@ -477,6 +477,9 @@ $RECYCLE.BIN/
 *.lnk
 
 
-Rider Files
+# Rider Files
 *.iml
 .idea/
+
+# SQLite db
+*.db
