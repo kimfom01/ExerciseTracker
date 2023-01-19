@@ -22,7 +22,7 @@ public class ExerciseController : IExerciseController
         Console.WriteLine("3 to Retrieve A Recorded Exercise");
         Console.WriteLine("4 to End An Existing Exercise");
         Console.WriteLine("5 to Delete An Existing Exercise");
-        Console.WriteLine("0 to Record A New Exercise");
+        Console.WriteLine("0 to Exit The Application");
         Console.WriteLine("\nYour choice?");
     }
 
