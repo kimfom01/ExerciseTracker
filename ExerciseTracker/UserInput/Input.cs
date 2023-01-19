@@ -2,11 +2,11 @@
 
 namespace ExerciseTracker.UserInput;
 
-public class Input
+public class Input : IInput
 {
-    private readonly InputValidation _inputValidation;
+    private readonly IInputValidation _inputValidation;
 
-    public Input(InputValidation inputValidation)
+    public Input(IInputValidation inputValidation)
     {
         _inputValidation = inputValidation;
     }
