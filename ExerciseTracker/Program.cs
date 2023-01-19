@@ -4,6 +4,7 @@ using ExerciseTracker.Repositories;
 using ExerciseTracker.Services;
 using ExerciseTracker.UserInput;
 using ExerciseTracker.Validations;
+using ExerciseTracker.Visualization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,6 +21,7 @@ using IHost host = Host.CreateDefaultBuilder(args)
         services.AddTransient<IExerciseController, ExerciseController>();
         services.AddTransient<IInput, Input>();
         services.AddTransient<IInputValidation, InputValidation>();
+        services.AddTransient<ITableVisualization, TableVisualization>();
     })
     .Build();
 
