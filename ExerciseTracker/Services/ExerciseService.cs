@@ -1,6 +1,7 @@
 using ExerciseTracker.Models;
 using ExerciseTracker.Repositories;
 using ExerciseTracker.UserInput;
+using ExerciseTracker.Visualization;
 
 namespace ExerciseTracker.Services;
 
@@ -8,26 +9,20 @@ public class ExerciseService : IExerciseService
 {
     private readonly IExerciseRepository _exerciseRepository;
     private readonly IInput _input;
+    private readonly ITableVisualization _tableVisualization;
 
-    public ExerciseService(IExerciseRepository exerciseRepository, IInput input)
+    public ExerciseService(IExerciseRepository exerciseRepository, IInput input, ITableVisualization tableVisualization)
     {
         _exerciseRepository = exerciseRepository;
         _input = input;
+        _tableVisualization = tableVisualization;
     }
 
     public void GetAllExercises()
     {
         var exercises = _exerciseRepository.GetExercises().ToList();
-        Console.Clear();
-        foreach (var exercise in exercises)
-        {
-            Console.WriteLine(exercise.Id);
-            Console.WriteLine(exercise.StartDate);
-            Console.WriteLine(exercise.EndDate);
-            Console.WriteLine(exercise.Duration);
-            Console.WriteLine(exercise.Comments);
-            Console.WriteLine();
-        }
+
+        _tableVisualization.DisplayTable(exercises);
 
         Console.Write("Press Enter to continue");
         Console.ReadLine();
@@ -38,14 +33,8 @@ public class ExerciseService : IExerciseService
         var id = _input.GetId();
 
         var exercise = _exerciseRepository.GetExerciseById(id);
-        Console.Clear();
-
-        Console.WriteLine(exercise.Id);
-        Console.WriteLine(exercise.StartDate);
-        Console.WriteLine(exercise.EndDate);
-        Console.WriteLine(exercise.Duration);
-        Console.WriteLine(exercise.Comments);
-        Console.WriteLine();
+        
+        _tableVisualization.DisplayTable(new List<Exercise> { exercise });
 
         Console.Write("Press Enter to continue");
         Console.ReadLine();
@@ -59,9 +48,9 @@ public class ExerciseService : IExerciseService
         _exerciseRepository.AddExercise(exercise);
         _exerciseRepository.SaveChanges();
         Console.Clear();
-        
+
         Console.WriteLine("New exercise recorded");
-        
+
         Console.Write("Press Enter to continue");
         Console.ReadLine();
     }
@@ -77,9 +66,9 @@ public class ExerciseService : IExerciseService
         _exerciseRepository.UpdateExercise(id, exercise);
         _exerciseRepository.SaveChanges();
         Console.Clear();
-        
+
         Console.WriteLine("Exercise updated");
-        
+
         Console.Write("Press Enter to continue");
         Console.ReadLine();
     }
@@ -90,9 +79,9 @@ public class ExerciseService : IExerciseService
         _exerciseRepository.DeleteExercise(id);
         _exerciseRepository.SaveChanges();
         Console.Clear();
-        
+
         Console.WriteLine("Exercise deleted");
-        
+
         Console.Write("Press Enter to continue");
         Console.ReadLine();
     }
