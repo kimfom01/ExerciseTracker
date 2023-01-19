@@ -1,6 +1,6 @@
 ﻿namespace ExerciseTracker.Validations;
 
-public class InputValidation
+public class InputValidation : IInputValidation
 {
     public bool ValidateInput(string input)
     {
