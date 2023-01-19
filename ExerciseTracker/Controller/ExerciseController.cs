@@ -56,6 +56,9 @@ public class ExerciseController : IExerciseController
                     Console.ReadLine();
                     break;
             }
+            
+            DisplayStartMenu();
+            choice = _input.GetChoice();
         }
     }
 }
