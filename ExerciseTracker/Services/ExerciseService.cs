@@ -7,9 +7,9 @@ namespace ExerciseTracker.Services;
 public class ExerciseService : IExerciseService
 {
     private readonly IExerciseRepository _exerciseRepository;
-    private readonly Input _input;
+    private readonly IInput _input;
 
-    public ExerciseService(IExerciseRepository exerciseRepository, Input input)
+    public ExerciseService(IExerciseRepository exerciseRepository, IInput input)
     {
         _exerciseRepository = exerciseRepository;
         _input = input;

@@ -1,4 +1,3 @@
-using ExerciseTracker.Models;
 using ExerciseTracker.Services;
 using ExerciseTracker.UserInput;
 
@@ -6,10 +5,10 @@ namespace ExerciseTracker.Controller;
 
 public class ExerciseController : IExerciseController
 {
-    private readonly Input _input;
+    private readonly IInput _input;
     private readonly IExerciseService _exerciseService;
 
-    public ExerciseController(Input input, IExerciseService exerciseService)
+    public ExerciseController(IInput input, IExerciseService exerciseService)
     {
         _input = input;
         _exerciseService = exerciseService;
